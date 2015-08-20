@@ -1,6 +1,6 @@
 ## confd and Docker - Separating config and code for containers
 
-This repo contains an example of how to use confd with Docker environment variables in order to set run-time configuration for containers.  A full blog post is available [here](http://www.mricho.com/confd-and-docker-seperating-config-and-code-for-containers)
+This repo contains an example of how to use confd with Docker environment variables in order to set run-time configuration for containers.  A full blog post is available [here](http://www.mricho.com/confd-and-docker-separating-config-and-code-for-containers)
 
 This example uses nginx.  The following occurs when launching a new container.  
 
