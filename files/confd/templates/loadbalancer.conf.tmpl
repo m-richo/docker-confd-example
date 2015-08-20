@@ -1,0 +1,15 @@
+upstream backend_hosts {
+{{ $nodes := split (getenv "app_servers") ":" }}{{range $nodes}}
+    server {{.}};{{end}}
+}
+
+server {
+    server_name  {{ getenv "load_balancer_domain" }}.example.com;
+    location / {
+        proxy_pass        http://backend_hosts;
+        proxy_redirect    off;
+        proxy_set_header  Host             $host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+   }
+}
